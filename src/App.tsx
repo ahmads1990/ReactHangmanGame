@@ -18,7 +18,6 @@ function App() {
 
     return (
         <div className="container">
-            {randomWord}
             <Drawing />
             <Word />
             <Keyboard />
