@@ -8,22 +8,37 @@ import wordData from "./wordList.json";
 function App() {
     const [randomWord, setRandomWord] = useState("");
     // Holds all the letters guessed by the user
-    const [guessedLetters, setGuessedLetters] = useState<string[]>(["v", "a", "e", "s", "t"]);
+    const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
 
     const selectNewRandomWord = () => {
         const newWord = wordData[Math.ceil(wordData.length * Math.random())];
         setRandomWord(newWord);
     };
-
     useEffect(() => {
         selectNewRandomWord();
     }, []);
+    // Add new letter to guessedLetters state
+    const guessNewLetter = (letter: string) => {
+        const newArray = [...guessedLetters, letter];
+        setGuessedLetters(newArray);
+    };
+    // Runs when user uses keyboard
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            const key = e.key;
+            if (!key.match(/^[a-z]$/)) return;
+            e.preventDefault();
+            guessNewLetter(key);
+        };
+        document.addEventListener("keydown", handleKeyDown);
+        return () => document.removeEventListener("keydown", handleKeyDown);
+    }, [guessedLetters]);
 
     return (
         <div className="container">
             <Drawing />
             <Word wordToGuess={randomWord} guessedLetters={guessedLetters} />
-            <Keyboard />
+            <Keyboard guessNewLetter={guessNewLetter} />
         </div>
     );
 }
