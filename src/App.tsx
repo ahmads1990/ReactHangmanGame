@@ -7,6 +7,9 @@ import wordData from "./wordList.json";
 
 function App() {
     const [randomWord, setRandomWord] = useState("");
+    // Holds all the letters guessed by the user
+    const [guessedLetters, setGuessedLetters] = useState<string[]>(["v", "a", "e", "s", "t"]);
+
     const selectNewRandomWord = () => {
         const newWord = wordData[Math.ceil(wordData.length * Math.random())];
         setRandomWord(newWord);
@@ -19,7 +22,7 @@ function App() {
     return (
         <div className="container">
             <Drawing />
-            <Word />
+            <Word wordToGuess={randomWord} guessedLetters={guessedLetters} />
             <Keyboard />
         </div>
     );
