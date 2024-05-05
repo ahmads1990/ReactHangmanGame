@@ -1,4 +1,7 @@
-const Drawing = () => {
+type DrawingProps = {
+    countToDraw: number;
+};
+const Drawing = ({ countToDraw }: DrawingProps) => {
     const HEAD = (
         <div
             style={{
@@ -84,7 +87,10 @@ const Drawing = () => {
     const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG];
     return (
         <div style={{ position: "relative" }}>
-            <ul>{BODY_PARTS}</ul>
+            {BODY_PARTS.slice(0, countToDraw).map((part, index) => (
+                <div key={index}>{part}</div>
+            ))}
+
             <div
                 style={{ height: "50px", width: "10px", background: "black", position: "absolute", top: 0, right: 0 }}
             />

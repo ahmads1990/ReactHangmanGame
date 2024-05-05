@@ -27,20 +27,32 @@ const KEYS = [
     "y",
     "z",
 ];
-type KeyboardProps = { guessNewLetter: (a: string) => void };
+type KeyboardProps = {
+    disabled: boolean;
+    guessNewLetter: (a: string) => void;
+    inactiveLetters: string[];
+};
 
-const Keyboard = ({ guessNewLetter }: KeyboardProps) => {
+const Keyboard = ({ disabled = false, guessNewLetter, inactiveLetters }: KeyboardProps) => {
     const handleButtonClick = (k: string) => {
-        guessNewLetter(k);
+        if (!disabled) guessNewLetter(k);
     };
 
     return (
         <div className="keyboard" style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: "5px" }}>
-            {KEYS.map((k) => (
-                <button className="key" key={k} onClick={() => handleButtonClick(k)}>
-                    {k}
-                </button>
-            ))}
+            {KEYS.map((k) => {
+                const isInActive = inactiveLetters.includes(k);
+                return (
+                    <button
+                        disabled={isInActive}
+                        className={isInActive ? "key key-inactive" : "key"}
+                        key={k}
+                        onClick={() => handleButtonClick(k)}
+                    >
+                        {k}
+                    </button>
+                );
+            })}
         </div>
     );
 };
