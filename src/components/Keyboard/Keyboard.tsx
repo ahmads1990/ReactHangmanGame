@@ -39,7 +39,7 @@ const Keyboard = ({ disabled = false, guessNewLetter, inactiveLetters }: Keyboar
     };
 
     return (
-        <div className="keyboard" style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: "5px" }}>
+        <div className="keyboard" style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: "5px" }}>
             {KEYS.map((k) => {
                 const isInActive = inactiveLetters.includes(k);
                 return (
