@@ -21,7 +21,7 @@ const Word = ({ wordToGuess, guessedLetters, reveal = false }: WordProps) => {
             {/* {wordToGuess} */}
             {wordToGuess.split("").map((letter, index) =>
                 guessedLetters.includes(letter) ? (
-                    <div key={index} style={{ color: reveal ? "green" : "black" }}>
+                    <div key={index} style={{ color: reveal ? "green" : "#FAFBFC" }}>
                         {letter}
                     </div>
                 ) : reveal ? (

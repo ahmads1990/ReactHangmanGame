@@ -4,3 +4,6 @@
     align-items: center;
     flex-direction: column;
 }
+html {
+    background-color: #24292e;
+}

@@ -68,6 +68,7 @@ function App() {
                 gap: "1rem",
                 margin: "0 auto",
                 alignItems: "center",
+                color: "#FAFBFC",
             }}
         >
             <div style={{ fontSize: "2rem", textAlign: "center" }}>

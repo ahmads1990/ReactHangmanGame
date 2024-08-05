@@ -8,7 +8,7 @@ const Drawing = ({ countToDraw }: DrawingProps) => {
                 width: "25px",
                 height: "25px",
                 borderRadius: "100%",
-                border: "5px solid black",
+                border: "5px solid #FAFBFC",
                 position: "absolute",
                 top: "25px",
                 right: "-15px",
@@ -20,7 +20,7 @@ const Drawing = ({ countToDraw }: DrawingProps) => {
             style={{
                 width: "5px",
                 height: "50px",
-                background: "black",
+                background: "#FAFBFC",
                 position: "absolute",
                 top: "60px",
                 right: 0,
@@ -32,7 +32,7 @@ const Drawing = ({ countToDraw }: DrawingProps) => {
             style={{
                 width: "50px",
                 height: "5px",
-                background: "black",
+                background: "#FAFBFC",
                 position: "absolute",
                 top: "75px",
                 right: "-50px",
@@ -46,7 +46,7 @@ const Drawing = ({ countToDraw }: DrawingProps) => {
             style={{
                 width: "50px",
                 height: "5px",
-                background: "black",
+                background: "#FAFBFC",
                 position: "absolute",
                 top: "75px",
                 right: "5px",
@@ -60,7 +60,7 @@ const Drawing = ({ countToDraw }: DrawingProps) => {
             style={{
                 width: "50px",
                 height: "5px",
-                background: "black",
+                background: "#FAFBFC",
                 position: "absolute",
                 top: "105px",
                 right: "-45px",
@@ -74,7 +74,7 @@ const Drawing = ({ countToDraw }: DrawingProps) => {
             style={{
                 width: "50px",
                 height: "5px",
-                background: "black",
+                background: "#FAFBFC",
                 position: "absolute",
                 top: "105px",
                 right: "0px",
@@ -92,11 +92,11 @@ const Drawing = ({ countToDraw }: DrawingProps) => {
             ))}
 
             <div
-                style={{ height: "25px", width: "5px", background: "black", position: "absolute", top: 0, right: 0 }}
+                style={{ height: "25px", width: "5px", background: "#FAFBFC", position: "absolute", top: 0, right: 0 }}
             />
-            <div style={{ height: "5px", width: "100px", background: "black", marginLeft: "60px" }} />
-            <div style={{ height: "200px", width: "5px", background: "black", marginLeft: "60px" }} />
-            <div style={{ height: "5px", width: "125px", background: "black" }} />
+            <div style={{ height: "5px", width: "100px", background: "#FAFBFC", marginLeft: "60px" }} />
+            <div style={{ height: "200px", width: "5px", background: "#FAFBFC", marginLeft: "60px" }} />
+            <div style={{ height: "5px", width: "125px", background: "#FAFBFC" }} />
         </div>
     );
 };
