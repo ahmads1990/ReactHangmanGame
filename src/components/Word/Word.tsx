@@ -18,7 +18,7 @@ const Word = ({ wordToGuess, guessedLetters, reveal = false }: WordProps) => {
                 fontFamily: "monospace",
             }}
         >
-            {wordToGuess}
+            {/* {wordToGuess} */}
             {wordToGuess.split("").map((letter, index) =>
                 guessedLetters.includes(letter) ? (
                     <div key={index} style={{ color: reveal ? "green" : "black" }}>
